@@ -10,9 +10,10 @@ export default function Header(){
             <img className='logo' src={logo} alt="logo projeto"/>
             </Link>
 
-            <Link to="/reservas">
+            <Link className="reserva" to="/reservas">
                 <div>
                     <strong>Minhas reservas</strong>
+
                     <span>0 reservas</span>
                 </div>
             </Link>
