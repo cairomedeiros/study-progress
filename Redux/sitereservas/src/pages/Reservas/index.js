@@ -22,6 +22,8 @@ export default function Reservas(){
                 alt={reserve.title}
                 />
                 <strong>{reserve.title}</strong>
+
+                
                 <span>Quantidade: {reserve.amount}</span>
                 <button
                 type="button"
