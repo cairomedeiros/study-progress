@@ -9,4 +9,12 @@ body{
     /*background-color: hsl(219, 29%, 14%);*/
    /* background-color: hsl(217, 19%, 35%);*/
    background-color: hsl(0, 0%, 81%);
+   width: 100%;
+   padding: 20px;
+   margin-top: 40px;
+   margin-bottom: 40px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
