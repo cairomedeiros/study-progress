@@ -16,6 +16,36 @@
     margin-top: 20px;
 }
 
+.img-card{
+  position: relative;
+}
+
+.img-card div{
+    position: absolute;
+    width: 280px;
+    top: 0;
+    background-color: hsl(178, 100%, 50%, 60%);
+    
+    height: 280px;
+    margin-top: 20px;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 8px;
+}
+.img-card div:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.img-card div img{
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    
+}
+
 .content{
     width: 280px;
     margin-bottom: 15px;
@@ -33,6 +63,10 @@
 .content h1{
     color: hsl(0, 0%, 100%);
     font-size: 22px;
+}
+.content h1:hover{
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
 }
 .texto{
     color: hsl(215, 51%, 70%);
@@ -78,6 +112,11 @@
 
 .content-footer span{
     color: hsl(0, 0%, 100%);
+}
+
+.content-footer span:hover{
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
 }
 
 .face{
