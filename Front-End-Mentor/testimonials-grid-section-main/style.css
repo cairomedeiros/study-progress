@@ -1,0 +1,12 @@
+.wrapper{
+    display: grid;
+    max-width: 1150px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    grid-gap: 20px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,128 @@
+.card{
+    background-color: hsl(216, 50%, 16%);
+    width: 325px;
+    height: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-around;
+
+    border-radius: 10px;
+}
+
+.img-card img{
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.img-card{
+  position: relative;
+}
+
+.img-card div{
+    position: absolute;
+    width: 280px;
+    top: 0;
+    background-color: hsl(178, 100%, 50%, 60%);
+    
+    height: 280px;
+    margin-top: 20px;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 8px;
+}
+.img-card div:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.img-card div img{
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.content{
+    width: 280px;
+    margin-bottom: 15px;
+}
+
+.container{
+    height: 170px;
+    
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.content h1{
+    color: hsl(0, 0%, 100%);
+    font-size: 22px;
+}
+.content h1:hover{
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+.texto{
+    color: hsl(215, 51%, 70%);
+}
+
+.eth-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.eth, .time{
+    display: flex;
+    align-items: center;
+}
+
+.eth-img{
+    margin-right: 10px;
+}
+
+.eth p{
+    color: hsl(178, 100%, 50%);
+    font-size: 15px;
+}
+.clock-img{
+    margin-right: 10px;
+}
+
+.time p{
+    color: hsl(215, 51%, 70%);
+    font-size: 15px;
+}
+
+.content-footer{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.content-footer small{
+    color: hsl(215, 51%, 70%);
+    font-size: 15px;
+}
+
+.content-footer span{
+    color: hsl(0, 0%, 100%);
+}
+
+.content-footer span:hover{
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+
+.face{
+    width: 35px;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
