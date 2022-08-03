@@ -1,5 +1,5 @@
 package heranca;
 
-public class Motorista {
+public class Motorista extends Funcionario {
     
 }
