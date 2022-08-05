@@ -8,16 +8,17 @@ public class App {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         
-        float valor;
-        float valorDescontado;
-        int ano;
-        float desconto;
+        float valor = 0.0f;
+        float valorDescontado = 0.0f;
+        int ano = 0;
+        float desconto = 0.0f;
+        int carros = 0;
+        int carrosSemiNovos = 0;
+        float porcentagem= 0.00f;
         
-        float porcentagem= 0.0f;
+        char repetir = 's';
         
-        boolean sistema = true;
-        
-        while(true){
+        while(repetir == 's' || repetir == 'S'){
             System.out.println("Digite o valor do carro.");
             valor = leitor.nextFloat();
 
@@ -26,10 +27,13 @@ public class App {
             
             
             if(ano <= 2000){
-               porcentagem = 0.012f;
+               porcentagem = 0.12f;
             }else{
-               porcentagem = 0.007f;
+               porcentagem = 0.07f;
+               carrosSemiNovos++;
             }
+            
+            carros++;
             
             desconto = valor * porcentagem;
             valorDescontado = valor - desconto;
@@ -38,12 +42,13 @@ public class App {
                     + desconto);
             
             System.out.println("Deseja continuar? S - sim/ N - não");
-            String continuar = leitor.nextLine();
+            repetir = leitor.next().charAt(0);
             
-            if("S"){
-                
-            }
+           
         }
+        
+        System.out.println("O total de carros seminovos é: " + carrosSemiNovos);
+        System.out.println("O total de carros é: " + carros);
         
     }
 }
