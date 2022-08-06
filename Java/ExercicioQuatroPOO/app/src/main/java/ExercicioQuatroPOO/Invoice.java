@@ -1,28 +1,22 @@
 package ExercicioQuatroPOO;
 
-
 public class Invoice {
+
     private int item;
     private String descricao;
     private int quantComprada;
     private float precoUnit;
 
     public Invoice(int item, String descricao, int quantComprada, float precoUnit) {
-        this.item = item;
-        this.descricao = descricao;
-        
-        if(quantComprada < 0){
-            this.quantComprada = 0;
-        }else{
-            this.quantComprada = quantComprada;
-        }
-        
-        if(precoUnit < 0){
-            this.precoUnit = 0;
-        }else{
-            this.precoUnit = precoUnit;
-        }
-        
+        this.setItem(item);
+        this.setDescricao(descricao);
+        this.setQuantComprada(quantComprada);
+        this.setPrecoUnit(precoUnit);
+
+    }
+
+    public double getInvoiceAmount() {
+        return quantComprada * precoUnit;
     }
 
     public int getItem() {
@@ -46,7 +40,11 @@ public class Invoice {
     }
 
     public void setQuantComprada(int quantComprada) {
-        this.quantComprada = quantComprada;
+        if (quantComprada < 0) {
+            this.quantComprada = 0;
+        } else {
+            this.quantComprada = quantComprada;
+        }
     }
 
     public float getPrecoUnit() {
@@ -54,12 +52,12 @@ public class Invoice {
     }
 
     public void setPrecoUnit(float precoUnit) {
-        this.precoUnit = precoUnit;
-    }
-    
-    
 
-    
-    
-    
+        if (precoUnit < 0) {
+            this.precoUnit = 0;
+        } else {
+            this.precoUnit = precoUnit;
+        }
+    }
+
 }
