@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Locale;
 
 public class Main {
 
@@ -6,6 +7,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		Locale.setDefault(Locale.US);
 		Scanner leitor = new Scanner(System.in);
 		
 		double fir;
@@ -19,6 +21,8 @@ public class Main {
 		double soma = fir + sec;
 		
 		System.out.println("soma das variáveis é: " + soma);
+		
+		leitor.close();
 
 	}
 
