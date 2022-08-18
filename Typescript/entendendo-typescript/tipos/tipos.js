@@ -1,9 +1,7 @@
 "use strict";
 let nome = 'cairo';
-console.log(nome);
 //tuplas
 let endereco = ["rua tenete", 197];
-console.log(endereco);
 //enums
 var DiasDaSemana;
 (function (DiasDaSemana) {
@@ -16,4 +14,17 @@ var DiasDaSemana;
     DiasDaSemana[DiasDaSemana["domingo"] = 6] = "domingo";
 })(DiasDaSemana || (DiasDaSemana = {}));
 let meudDia = DiasDaSemana.terca;
-console.log(meudDia);
+let contaBancaria = {
+    saldo: 3456,
+    depositar(valor) {
+        this.saldo += valor;
+    }
+};
+let correntista = {
+    nome: 'Ana Silva',
+    contaBancaria: contaBancaria,
+    contatos: ['34567890', '98765432']
+};
+correntista.contaBancaria.depositar(3000);
+console.log(correntista);
+//# sourceMappingURL=tipos.js.map
