@@ -13,6 +13,6 @@ public class App {
         Connection c = connectionFactory .getConnection();
         connectionFactory.closeConnection(c);
         
-        Carro obj = new Carro();
+        
     }
 }
