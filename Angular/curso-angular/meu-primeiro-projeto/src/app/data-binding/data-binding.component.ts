@@ -11,7 +11,7 @@ export class DataBindingComponent implements OnInit {
 
   public srczada: string = "https://static5.depositphotos.com/1037262/521/i/450/depositphotos_5215813-stock-photo-sunset-strip.jpg";
 
-  public modelo: any = "";
+  public modelo: string = "";
   constructor() { }
 
   ngOnInit(): void {
