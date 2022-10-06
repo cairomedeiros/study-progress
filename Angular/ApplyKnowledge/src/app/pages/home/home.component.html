@@ -1,4 +1,4 @@
-<div class="containerHome">
+<div class="containerHome" [ngStyle]="{backgroundColor : color}">
     <article class="card">
         <h2>Two-way data Binding</h2>
         <div>
@@ -10,7 +10,6 @@
         </div>
         
     </article>
-    <br>
     <article class="card">
         <h2>ngSwitch</h2>
         <input type="text"
@@ -23,7 +22,6 @@
         </div>
 
     </article>
-    <br>
     <article class="card">
         <h2>ngIf</h2>
         <label for="">Digite o seu nome</label>
@@ -43,6 +41,20 @@
         <div *ngFor="let i of nomeFor">
             <h4>Nome: {{i.n}}</h4>
             <h4>Idade: {{i.age}}</h4>
+        </div>
+    </article>
+
+    <article class="card">
+        <h2>ngStyle</h2>
+        <div>
+            <button (click)="changeBackground()">Change Background</button>
+        </div>
+    </article>
+    <article class="card">
+        <h2>ngClass</h2>
+        <div>
+            <div class="square" [ngClass]="{'divClass' : changeClassColor}"></div>
+            <button (click)="changeClass()">Change Class</button>
         </div>
     </article>
 </div>
