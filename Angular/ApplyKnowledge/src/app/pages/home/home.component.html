@@ -1,12 +1,30 @@
-<div>
-    <article>
+<div class="containerHome">
+    <article class="card">
         <h2>Two-way data Binding</h2>
         <div>
             <input type="text"
-            [value]="nome"
+            [(ngModel)]="nome"
             >
 
             <p>vc digitou: {{nome}}</p>
         </div>
+        
+    </article>
+    <br>
+    <article class="card">
+        <h2>ngSwitch</h2>
+        <input type="text"
+            [(ngModel)]="name"
+            >
+        <div [ngSwitch]="name">
+            <p *ngSwitchCase="'cairo'">aeee sou eu</p>
+            <p *ngSwitchCase="'matheus'">errou</p>
+            <p *ngSwitchCase="'ciro gomes'">político</p>
+        </div>
+
+    </article>
+    <br>
+    <article class="card">
+        
     </article>
 </div>
