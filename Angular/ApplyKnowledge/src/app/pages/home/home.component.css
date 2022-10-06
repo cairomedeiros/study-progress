@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 80.8vh;
+    min-height: 100vh;
     background-color: #E7E7E7E7;
     gap: 20px;
 }
