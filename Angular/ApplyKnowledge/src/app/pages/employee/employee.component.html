@@ -1,0 +1,16 @@
+<div class="containerEmployee">
+    <div class="cardEmployee">
+        <button (click)="getListEmployee()">Lista de Empregados</button>
+        <div *ngFor="let i of getAllEmployees">
+            <p>Nome: {{i.nome}}</p>
+            <p>Departamento: {{i.department}}</p>
+            <p>Id da categoria: {{i.categoria_id}}</p>
+        </div>
+    </div>
+    <div class="cardCategoria">
+        <button (click)="getListCategorias()">categorias</button>
+        <div *ngFor="let i of categoria">
+            <p>O que faz: {{i.nome}}</p>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+import { getNumberOfCurrencyDigits } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -20,9 +21,22 @@ export class HomeComponent implements OnInit {
     {n: 'gun zagueiro', age: 40}
   ];
 
+  color: string = '';
+
+  changeClassColor: boolean = false;
+
   ngOnInit(): void {
   }
 
-  
+  changeBackground(){
+    
+  let randomColor ='#' + Math.floor(Math.random()*16777215).toString(16);
+  this.color = randomColor;
+  }
+
+  changeClass(){
+    this.changeClassColor = !this.changeClassColor;
+    console.log(this.changeClassColor);
+  }
 
 }
