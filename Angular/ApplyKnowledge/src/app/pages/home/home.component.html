@@ -1,3 +1,4 @@
+
 <div class="containerHome" [ngStyle]="{backgroundColor : color}">
     <article class="card">
         <h2>Two-way data Binding</h2>
@@ -56,5 +57,14 @@
             <div class="square" [ngClass]="{'divClass' : changeClassColor}"></div>
             <button (click)="changeClass()">Change Class</button>
         </div>
+    </article>
+    <article class="card">
+        <h2>Uso do @Output</h2>
+        <h3>O número é:  {{myNumber}}</h3>
+        <app-child-home (changeNumber)="onChangeNumber()"></app-child-home>
+    </article>
+    <article class="card">
+        <h2>Uso do @input</h2>
+        <app-child-input [item]="itemDia"></app-child-input>
     </article>
 </div>

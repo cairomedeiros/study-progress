@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() {}
-
+  itemDia: string = "Child's day";
+  myNumber: number = 0;
   nome: string = '';
   name: string = '';
   nomeIf: string = '';
@@ -26,6 +27,10 @@ export class HomeComponent implements OnInit {
   changeClassColor: boolean = false;
 
   ngOnInit(): void {
+  }
+
+  onChangeNumber(){
+    this.myNumber += 1
   }
 
   changeBackground(){
