@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { ChildHomeComponent } from './component/child-home/child-home.component';
+import { ChildInputComponent } from './component/child-input/child-input.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { EmployeeComponent } from './pages/employee/employee.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    ChildHomeComponent,
+    ChildInputComponent
   ],
   imports: [
     BrowserModule,
