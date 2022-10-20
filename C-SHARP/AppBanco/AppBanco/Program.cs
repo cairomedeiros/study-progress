@@ -24,18 +24,23 @@
                 conta = new ContaBancaria(numero, titular, saldoInicial);
                 Console.WriteLine(conta);
 
-            }
-            else if(first == 'N')
-            {
-                conta = new ContaBancaria(numero, titular);
-                Console.WriteLine(conta);
+               
+
             }
             else
             {
-                Console.WriteLine("Error");
+                conta = new ContaBancaria(numero, titular);
             }
-            
+            Console.Write("Quer fazer algum deposito? ");
+            double amount = double.Parse(Console.ReadLine());
+            conta.Deposito(amount);
+            Console.WriteLine("Novo saldo: " + conta.Saldo);
 
+            Console.Write("Quer fazer algum saque? ");
+            double amountSaque = double.Parse(Console.ReadLine());
+            conta.Saque(amountSaque);
+            Console.WriteLine("Novo saldo: " + conta.Saldo);
+            Console.WriteLine(conta);
         }
     }
 }
