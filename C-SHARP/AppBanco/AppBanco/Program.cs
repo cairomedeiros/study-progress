@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            ContaBancaria c = new ContaBancaria();
+            ContaBancaria conta;
             Console.Write("Entre com o número da conta: ");
             int numero = int.Parse(Console.ReadLine());
             Console.Write("Entre com o titular da conta: ");
@@ -13,28 +13,29 @@
             string confirm = Console.ReadLine();
             string confirmUpper = confirm.ToUpper();
             char first = confirmUpper[0];
+            
 
-            if(first == 'S')
+            if (first == 'S')
             {
                 Console.Write("Entre com o valor de deposito inicial: ");
-                double saldo = double.Parse(Console.ReadLine());
+                
+                double saldoInicial = double.Parse(Console.ReadLine());
 
-                ContaBancaria cc = new ContaBancaria(numero, titular, saldo);
+                conta = new ContaBancaria(numero, titular, saldoInicial);
+                Console.WriteLine(conta);
 
-                Console.WriteLine(cc);
             }
             else if(first == 'N')
             {
-                Console.WriteLine("salut!");
+                conta = new ContaBancaria(numero, titular);
+                Console.WriteLine(conta);
             }
             else
             {
                 Console.WriteLine("Error");
             }
+            
 
-           
-
-           
         }
     }
 }

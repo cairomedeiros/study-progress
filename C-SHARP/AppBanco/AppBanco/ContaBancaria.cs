@@ -17,19 +17,19 @@ namespace AppBanco
         {
 
         }
-
-        public ContaBancaria(int numero, string titular, double saldo)
-        {
-            Numero = numero;
-            Saldo = saldo;
-            Titular = titular;
-        }
-
         public ContaBancaria(int numero, string titular)
         {
             Numero = numero;
             Titular = titular;
         }
+
+
+        public ContaBancaria(int numero, string titular, double saldo) : this(numero, titular)
+        {
+            Saldo = saldo;
+        }
+
+        
 
         public void Deposito(double quantia)
         {
