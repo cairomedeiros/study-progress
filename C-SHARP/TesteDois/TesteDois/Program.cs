@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
+using Microsoft.EntityFrameworkCore;
+using TesteDois.Data;
 
 namespace TesteDois {
     public class Program {
@@ -11,6 +13,8 @@ namespace TesteDois {
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<PacienteDbContext>(options => options.UseInMemoryDatabase("PacienteDb"));
 
             builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
                 .AddNegotiate();
