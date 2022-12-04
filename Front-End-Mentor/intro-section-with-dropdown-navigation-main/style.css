@@ -5,6 +5,8 @@
 }
 
 body{
+    width: 100%;
+    float: none;
     font-family: 'sans-serif';
     padding-top: 80px;
 }
@@ -14,6 +16,18 @@ header{
     top: 0;
     width: 100%;
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    width: 100%;
+    max-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,11 +41,18 @@ main{
     align-items: center;
 }
 
+.main-container{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 main div{
     gap: 30px;
 }
 
 main img{
+    width: 100%;
     max-width: 375px;
     margin-bottom: 30px;
 }
@@ -41,15 +62,109 @@ main div h1, main div p{
     margin-bottom: 20px;
 }
 
+.title{
+    color: hsl(0, 0%, 8%);
+}
+.paragraph{
+    color: hsl(0, 0%, 41%);
+}
+
 main div button{
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 20px;
+    width: 12em;
+    height: 3em;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: hsl(0, 0%, 8%);
 }
 
-footer{
+.clients{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    width: 100%;
     padding: 40px;
+}
+
+@media (max-width: 452px) {
+    html{
+        width: 100%;
+    }
+    .main-container{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1023.5px) {
+    .main-container{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .image-desktop{
+        display: none;
+    }
+
+    .title{
+        font-size: 2.5em;
+    }
+
+    .content{
+        padding: 3px
+    }
+}
+
+@media (min-width: 1023px) {
+    .main-container{
+        
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 60px;
+        gap: 100px;
+    }
+
+    .btn{
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .image-mobile{
+        display: none;
+        width: 50%;
+    }
+
+    .title{
+        text-align: left;
+        font-size: 5rem;
+    }
+
+    .paragraph{
+        text-align: left;
+    }
+
+    .content{
+        width: 700px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-left: 10px
+    }
+
+    .image-desktop{
+        width: 700px;
+        height: 550px;
+        margin-right: 10px;
+    }
+
+    .clients{
+        margin-top: 50px;
+        position: relative;
+        justify-content: space-between;
+        right: 40px;
+    }
 }
