@@ -4,7 +4,7 @@ Repositório dedicado a compartilhar meu estudo diário ao iniciar uma linguagem
 ## CSS [![My Skills](https://skills.thijs.gg/icons?i=css&theme=light)](https://skills.thijs.gg)
 - <a href="https://github.com/cairomedeiros/study-progress/blob/main/CSS/Box-model/README.md">Box model</a>
 - <a href="https://github.com/cairomedeiros/study-progress/blob/main/CSS/Position/README.md">Position</a>
-- display
+- Display
 - <a href="https://github.com/cairomedeiros/study-progress/blob/main/CSS/Flexbox/README.md">Flexbox</a>
-- grid
-- animations
+- Grid
+- Animations
