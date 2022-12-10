@@ -7,4 +7,4 @@ Repositório dedicado a compartilhar meu estudo diário ao iniciar uma linguagem
 - Display
 - <a href="https://github.com/cairomedeiros/study-progress/blob/main/CSS/Flexbox/README.md">Flexbox</a>
 - Grid
-- Animations
+- Animation
