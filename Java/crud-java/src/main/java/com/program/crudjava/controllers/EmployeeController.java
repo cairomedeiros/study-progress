@@ -37,10 +37,10 @@ public class EmployeeController {
 
     @PutMapping(value = "/change/{id}")
     public Employee change(@RequestBody Employee newEmployee, @PathVariable Long id){
-        Optional<Employee> oldEmployee = repository.findById(id);
+        Employee oldEmployee = repository.findById(id).get();
 
         
-            Employee employee = oldEmployee.get();
+            Employee employee = oldEmployee;
             employee.setName(newEmployee.getName());
             employee.setAge(newEmployee.getAge());
             repository.save(employee);
