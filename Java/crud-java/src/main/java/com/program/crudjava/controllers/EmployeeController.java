@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,7 +27,12 @@ public class EmployeeController {
     @GetMapping(value = "/{id}")
     public Employee findById(@PathVariable Long id){
         Employee result = repository.findById(id).get();
-        return result;
+
+        if(result != null){
+            return result;
+        }else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping
@@ -39,12 +45,16 @@ public class EmployeeController {
     public Employee change(@RequestBody Employee newEmployee, @PathVariable Long id){
         Employee oldEmployee = repository.findById(id).get();
 
-        
+        if(oldEmployee != null){
             Employee employee = oldEmployee;
             employee.setName(newEmployee.getName());
             employee.setAge(newEmployee.getAge());
             repository.save(employee);
             return employee;
+        }else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
 
     }
 

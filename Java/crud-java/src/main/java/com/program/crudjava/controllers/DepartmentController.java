@@ -3,7 +3,10 @@ package com.program.crudjava.controllers;
 import com.program.crudjava.entities.Department;
 import com.program.crudjava.repositories.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -23,7 +26,14 @@ public class DepartmentController {
     @GetMapping(value = "/{id}")
     public Department findById(@PathVariable Long id){
         Department result = repository.findById(id).get();
-        return result;
+
+        if(result != null){
+            return result;
+        }else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+
     }
 
     @PostMapping
@@ -36,10 +46,15 @@ public class DepartmentController {
     public Department change(@PathVariable Long id,@RequestBody Department newDepartment){
         Department result = repository.findById(id).get();
 
-        Department department = result;
-        department.setName(newDepartment.getName());
-        repository.save(department);
-        return department;
+        if(result != null){
+            Department department = result;
+            department.setName(newDepartment.getName());
+            repository.save(department);
+            return department;
+        }else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
     }
 
     @DeleteMapping(value = "/deleteDep/{id}")
