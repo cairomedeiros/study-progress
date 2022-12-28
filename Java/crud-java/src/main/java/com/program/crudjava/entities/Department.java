@@ -15,6 +15,11 @@ public class Department {
 
     }
 
+    public Department(Long id, String name) {
+        Id = id;
+        Name = name;
+    }
+
     public Long getId() {
         return Id;
     }

@@ -9,14 +9,24 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    private String Name;
-    private Double Age;
+    private String Username;
+
+    private String Roles;
+    private String Password;
 
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
 
     public Employee(){}
+
+    public Employee(Long id, String username, String roles, String password, Department department) {
+        Id = id;
+        Username = username;
+        Roles = roles;
+        Password = password;
+        this.department = department;
+    }
 
     public Long getId() {
         return Id;
@@ -27,19 +37,27 @@ public class Employee {
     }
 
     public String getName() {
-        return Name;
+        return Username;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setName(String username) {
+        Username = username;
     }
 
-    public Double getAge() {
-        return Age;
+    public String getRoles() {
+        return Roles;
     }
 
-    public void setAge(Double age) {
-        Age = age;
+    public void setRoles(String roles) {
+        Roles = roles;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 
     public Department getDepartment() {

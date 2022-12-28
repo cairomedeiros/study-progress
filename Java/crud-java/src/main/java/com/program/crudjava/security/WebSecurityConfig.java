@@ -1,5 +1,6 @@
 package com.program.crudjava.security;
 
+import com.program.crudjava.repositories.DepartmentRepository;
 import org.apache.coyote.Adapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +21,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig {
+    private DepartmentRepository departmentRepository;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -28,29 +30,10 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/login").permitAll()
-                        .requestMatchers("/department").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/department").hasAnyRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin(withDefaults());
         return http.build();
     }
-
-    /*@Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails user =
-                User.withDefaultPasswordEncoder()
-                        .username("user")
-                        .password("password")
-                        .roles("USER")
-                        .build();
-
-        UserDetails userDois =
-                User.withDefaultPasswordEncoder()
-                        .username("ADM")
-                        .password("teste123")
-                        .roles("ADMIN")
-                        .build();
-
-        return new InMemoryUserDetailsManager(user, userDois);
-    }*/
 }

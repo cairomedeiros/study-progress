@@ -48,7 +48,8 @@ public class EmployeeController {
         if(oldEmployee != null){
             Employee employee = oldEmployee;
             employee.setName(newEmployee.getName());
-            employee.setAge(newEmployee.getAge());
+            employee.setRoles(newEmployee.getRoles());
+            employee.setPassword(newEmployee.getPassword());
             repository.save(employee);
             return employee;
         }else{
