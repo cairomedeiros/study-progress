@@ -1,10 +1,10 @@
 # Study progress
 Repositório dedicado a compartilhar meu estudo diário ao iniciar uma linguagem, fixar conceitos, etc
 
-## Git
-- Básico do Git
-- Git branching
-- Git on the server
+## Git ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+- <a href="https://github.com/cairomedeiros/study-progress/tree/main/Git/Basic-of-git">Básico do Git</a>
+- <a href="https://github.com/cairomedeiros/study-progress/tree/main/Git/Git-branching">Git branching</a>
+- <a href="https://github.com/cairomedeiros/study-progress/tree/main/Git/Git-on-the-server">Git on the server</a>
 
 ## CSS [![My Skills](https://skills.thijs.gg/icons?i=css&theme=light)](https://skills.thijs.gg)
 - <a href="https://github.com/cairomedeiros/study-progress/blob/main/CSS/Box-model/README.md">Box model</a>
