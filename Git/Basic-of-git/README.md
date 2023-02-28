@@ -19,3 +19,7 @@
 ### ````git reset HEAD <file>````
 - Caso queira tirar da área de stage que é após o git add, basta usar esse comando para unstage a alteração
 - Se você apenas modificou o arquivo e não executou git add, esse comando vai retirar as alterações do arquivo
+- Ele atualiza a branch, removendo ou adicionando commits, essa operação muda o histórico de commits
+### ````git restore --staged <file>/git restore <file>````
+- Esse comando não atualiza a sua branch
+- Modo de uso parecido com git reset
