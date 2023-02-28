@@ -23,3 +23,6 @@
 ### ````git restore --staged <file>/git restore <file>````
 - Esse comando não atualiza a sua branch
 - Modo de uso parecido com git reset
+### ````git fetch <remote>````
+- Comando que permite atualizar o seu repositório local com as alterações mas sem mesclar automaticamente
+- Isso permite que você veja as alterações feitas e decida quais mesclar com seu código local (git merge)
