@@ -28,3 +28,5 @@
 - Isso permite que você veja as alterações feitas e decida quais mesclar com seu código local (git merge)
 ### ````git push origin <branch>````
 - Quando tiver o seu projeto em um ponto que queira compartilhar, você deve usar esse comando, que irá subir as alterações para a branch remota
+### ````git tag````
+- 
