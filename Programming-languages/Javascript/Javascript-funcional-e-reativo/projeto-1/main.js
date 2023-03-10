@@ -1,19 +1,6 @@
-let fs = require('fs');
+const path = require('path');
+const fn = require('./functions');
 
-for(let i = 1; i <= 2; i++){
-    if(i < 10){
-        
-        i = `0${i}`;
-    }
-    fs.readFile(`./legenda_${i}.srt`, 'utf8', function(err, data){
-    
-        var dataComplete = data
-        showConsole(dataComplete);
-        //console.log(dataComplete);
-        //console.log("##########################################################################################")
-    });
-}
+const caminho = path.join(__dirname, 'legendas')
 
-function showConsole(x){
-    console.log(x)
-}
+fn.lerDiretorio(caminho);
