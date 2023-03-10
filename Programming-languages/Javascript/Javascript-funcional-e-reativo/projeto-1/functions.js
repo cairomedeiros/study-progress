@@ -1,18 +1,23 @@
 const fs = require('fs');
+const path = require('path');
 
-async function lerDiretorio(caminho) {
-    let arquivos = await fs.readdirSync(caminho);
-    arquivos.forEach( item => {
-        if(item.includes('.txt')){
-            let index = arquivos.indexOf(item);
-            console.log(index)
-            arquivos.splice(index, 1)
+function lerDiretorio(caminho) {
+    return new Promise((resolve, reject) => {
+        try{
+            let arquivos = fs.readdirSync(caminho);
+            arquivos = arquivos.map(arquivo => path.join(caminho, arquivo))
+            resolve(arquivos)
+        }catch(e){
+            reject(e)
         }
-        
     })
-    console.log(arquivos)
+}
+
+function elementosTerminadosCom(array, padrao){
+    return array.filter(el => el.endsWith(padrao))
 }
 
 module.exports = {
-    lerDiretorio
+    lerDiretorio,
+    elementosTerminadosCom
 }
