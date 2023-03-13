@@ -17,7 +17,22 @@ function elementosTerminadosCom(array, padrao){
     return array.filter(el => el.endsWith(padrao))
 }
 
+function lerConteudoArquivos(arquivosLidos){
+    let all = '';
+    arquivosLidos.map(item => {
+        fs.readFile(item, 'utf8', (err, data) => {
+            if(!undefined){
+                console.log(all)
+                all = all + data
+            }
+        })
+    })
+
+    return all;
+}
+
 module.exports = {
     lerDiretorio,
-    elementosTerminadosCom
+    elementosTerminadosCom,
+    lerConteudoArquivos
 }
