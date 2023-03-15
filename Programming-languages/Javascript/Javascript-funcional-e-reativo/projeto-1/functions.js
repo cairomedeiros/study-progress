@@ -41,11 +41,16 @@ function retirarLinhasTempo(tempos, padraoTextual){
     return tempos.filter(el => !el.includes(padraoTextual))
 }
 
+function removerValorNumerico(numero){
+    return numero.filter(el => !parseInt(el))
+}
+
 module.exports = {
     lerDiretorio,
     lerArquivo,
     lerArquivos,
     elementosTerminadosCom,
     retirarLinhasVazias,
-    retirarLinhasTempo
+    retirarLinhasTempo,
+    removerValorNumerico
 }
