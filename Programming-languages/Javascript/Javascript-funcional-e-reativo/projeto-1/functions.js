@@ -37,10 +37,15 @@ function retirarLinhasVazias(todoConteudo){
     return todoConteudo.filter(el => el.trim())
 }
 
+function retirarLinhasTempo(tempos, padraoTextual){
+    return tempos.filter(el => !el.includes(padraoTextual))
+}
+
 module.exports = {
     lerDiretorio,
     lerArquivo,
     lerArquivos,
     elementosTerminadosCom,
-    retirarLinhasVazias
+    retirarLinhasVazias,
+    retirarLinhasTempo
 }
