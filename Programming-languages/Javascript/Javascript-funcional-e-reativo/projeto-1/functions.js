@@ -33,9 +33,14 @@ function lerArquivos(caminhos){
     return Promise.all(caminhos.map(caminho => lerArquivo(caminho)))
 }
 
+function retirarLinhasVazias(todoConteudo){
+    return todoConteudo.filter(el => el.trim())
+}
+
 module.exports = {
     lerDiretorio,
     lerArquivo,
     lerArquivos,
-    elementosTerminadosCom
+    elementosTerminadosCom,
+    retirarLinhasVazias
 }
