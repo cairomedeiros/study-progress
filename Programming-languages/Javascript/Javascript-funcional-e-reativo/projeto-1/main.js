@@ -10,15 +10,20 @@ const separarPorLinhas = todoConteudo => todoConteudo.split('\n')
 const separarPorPalavras = todoConteudo => todoConteudo.split(' ')
 
 function agruparPalavras(palavras){
-    return palavras.reduce((agrupamento, palavra) => {
-        const p = palavra.toLowerCase()
-        if(agrupamento[p]){
-            agrupamento[p] += 1
-        }else{
-            agrupamento[p] = 1
-        }
-        return agrupamento
-    }, {})
+    return Object.values(palavras.reduce((acc, palavra) => {
+        const el = palavra.toLowerCase()
+        const qtde = acc[el] ? acc[el].qtde + 1 : 1
+        acc[el] = { elemento: el, qtde}
+        return acc
+    }, {}))
+}
+
+function ordernarPorAtribNumerico(attr, ordem = 'asc'){
+    return function(array){
+        const desc = (o1, o2) => o2[attr] - o1[attr]
+        const asc = (o1, o2) => o1[attr] - o2[attr]
+        return array.sort(ordem === 'asc' ? asc : desc)
+    }
 }
 
 fn.lerDiretorio(caminho)
@@ -35,4 +40,5 @@ fn.lerDiretorio(caminho)
     .then(todoConteudo => fn.retirarLinhasVazias(todoConteudo))
     .then(numeros => fn.removerValorNumerico(numeros))
     .then(agruparPalavras)
+    .then(ordernarPorAtribNumerico('qtde', 'desc'))
     .then(console.log)
