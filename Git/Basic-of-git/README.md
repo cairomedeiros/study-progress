@@ -29,4 +29,4 @@
 ### ````git push origin <branch>````
 - Quando tiver o seu projeto em um ponto que queira compartilhar, você deve usar esse comando, que irá subir as alterações para a branch remota
 ### ````git tag````
-- 
+- Tags são utilizadas para marcar pontos de versão em seu projeto, como por exemplo temos um projeto na versão v4.2.0 e após uma alteração de correção de um bug passa a ser v4.2.0
