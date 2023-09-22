@@ -2,6 +2,8 @@ package com.cairo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -26,7 +28,7 @@ public class Main {
         customers.add(alex);
 
         Customer harry = new Customer(
-                1,
+                4,
                 "Harry",
                 "harry@gmail.com",
                 29
@@ -39,6 +41,24 @@ public class Main {
         System.out.println(customers);
         SpringApplication.run(Main.class, args);
 
+    }
+
+    @GetMapping("/api/v1/customers")
+    public List<Customer> getCustomers(){
+        return customers;
+    }
+
+    @GetMapping("/api/v1/customers/{customerId}")
+    public Customer getCustomer(
+            @PathVariable("customerId") Integer customerId){
+        Customer customer = customers.stream()
+                .filter(c ->  c.id.equals(customerId))
+                .findFirst()
+                .orElseThrow(
+                        () -> new IllegalArgumentException("customer with incorret id")
+                );
+
+        return customer;
     }
 
     static class Customer {
