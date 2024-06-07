@@ -1,4 +1,4 @@
-# Anotações dos estudos
+# Anotações sobre alguns tópicos
 Repositório dedicado a compartilhar meu estudo diário ao iniciar uma linguagem, fixar conceitos, etc
 
 ## Git ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
